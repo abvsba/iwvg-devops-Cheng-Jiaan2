@@ -46,7 +46,10 @@ public class Fraction {
     }
 
     public Fraction add(Fraction fraction) {
-        int commonDenominator = this.denominator * fraction.getDenominator();
+        int commonDenominator = this.denominator;
+        if (this.denominator != fraction.getDenominator()) {
+            commonDenominator = this.denominator * fraction.getDenominator();
+        }
         int numerator1 = commonDenominator/this.denominator*this.numerator;
         int numerator2 = commonDenominator/fraction.getDenominator()*fraction.getNumerator();
         return new Fraction(numerator1+numerator2, commonDenominator);
