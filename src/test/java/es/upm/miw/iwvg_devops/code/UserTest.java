@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg_devops.rest.code;
+package es.upm.miw.iwvg_devops.code;
 
 import es.upm.miw.iwvg_devops.code.Fraction;
 import es.upm.miw.iwvg_devops.code.User;
