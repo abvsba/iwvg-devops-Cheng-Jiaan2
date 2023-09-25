@@ -8,7 +8,14 @@ public class Searches {
         return new UsersDatabase().findAll()
                 .filter(user -> name.equals(user.getName()))
                 .flatMap(user -> user.getFractions().stream())
-                .map(Fraction :: decimal);
+                .map(Fraction::decimal);
+    }
+
+    Stream<String> findUserIdByAllProperFraction() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .allMatch(Fraction::isProper))
+                .map(User::getId);
     }
 
 }

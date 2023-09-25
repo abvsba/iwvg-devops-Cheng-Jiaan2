@@ -13,4 +13,10 @@ class SearchTest {
         assertEquals(List.of(0.0, -0.0, 0.0), new Searches().findDecimalFractionByUserName("Antonio")
                 .collect(Collectors.toList()));
     }
+
+    @Test
+    void testFindUserIdByAllProperFraction() {
+        assertEquals(List.of(), new Searches().findUserIdByAllProperFraction()
+                .collect(Collectors.toList()));
+    }
 }
