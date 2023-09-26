@@ -18,5 +18,13 @@ public class Searches {
                 .map(User::getId);
     }
 
+    Stream<Double> findDecimalImproperFractionByUserName(String name) {
+        return new UsersDatabase().findAll()
+                .filter(user -> name.equals(user.getName()))
+                .flatMap(user -> user.getFractions().stream())
+                .filter(Fraction::isImproper)
+                .map(Fraction::decimal);
+    }
+
 }
 
